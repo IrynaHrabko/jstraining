@@ -50,9 +50,9 @@ if ((birthMonthToCheck === 12 && birthDayToCheck >= 22) || (birthMonthToCheck ==
 
 if (nameToCheck.length >= 1 && surnameToCheck.length >= 1 && !isNaN(birthDayToCheck) && !isNaN(birthMonthToCheck) && !isNaN(birthYearToCheck)) {
   if (isLeapYear) {
-    alert(`${nameToCheck} ${surnameToCheck}, ${userAge} років (Leap year), ${zodiac}`)
+    alert(`User Bio: ${nameToCheck} ${surnameToCheck}, ${userAge} років (Leap year), ${zodiac}`)
   } else {
-    alert(`${nameToCheck} ${surnameToCheck}, ${userAge} років, ${zodiac}`)
+    alert(`User Bio: ${nameToCheck} ${surnameToCheck}, ${userAge} років, ${zodiac}`)
   }
 } else {
   alert("Ведіть коректні дані")
