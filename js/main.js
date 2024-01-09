@@ -7,11 +7,14 @@ function toggleModal(content) {
   let existedModals = document.querySelectorAll('dialog[open]')
   let offset = 0
   if (existedModals[0]) {
-      offset = Array.from(existedModals).reduce(callback)
+    offset = Array.from(existedModals).reduce(callback, 0)
   }
-  function callback() {
-      // - your code - //
+
+  function callback(totalOffset, modal) {
+    let modalHeight = modal.getBoundingClientRect().height
+    return totalOffset + modalHeight + 20
   }
+
   let modal = createModal(content, offset)
   document.querySelector('body').appendChild(modal)
 }
@@ -19,7 +22,11 @@ function createModal(content, top = 0) {
   let modal = document.createElement('dialog')
   modal.innerText = content
   modal.classList.add('active')
-  modal.style.translate = `${top} 0`;
+  modal.style.translate = `0 ${top}px`
   modal.setAttribute('open', '')
   return modal
 }
+
+
+
+
